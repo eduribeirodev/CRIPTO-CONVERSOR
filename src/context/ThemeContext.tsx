@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState} from "react";
 import type { ReactNode } from "react";
 
 type Theme = "light" | "dark";
@@ -8,13 +8,12 @@ interface ThemeContextData {
   toggleTheme: () => void;
 }
 
-// 1. Criamos o contexto
 const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData);
 
-// 2. Criamos o Provider (quem vai envolver a aplicação)
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
-    // Busca o tema salvo no navegador ao iniciar
+  
+    
     const saved = localStorage.getItem("@nexus:theme");
     return (saved as Theme) || "light";
   });
@@ -37,5 +36,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   );
 }
 
-// 3. Hook customizado para usar em qualquer lugar
-export const useTheme = () => useContext(ThemeContext);
+export const useTheme = () => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error("useTheme deve ser usado dentro de um ThemeProvider");
+  }
+  return context;
+};
