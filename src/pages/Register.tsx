@@ -27,10 +27,9 @@ export function Register() {
         password === userMock.password &&
         confirmationPassword === userMock.confirmation_password
       ) {
-        alert("Cadastro Realizado")
-        navigate("/")
+        navigate("/home")
       } else {
-        alert('Erro')
+        alert('Erro ao cadastrar');
       }
 
       setIsLoading(false)
@@ -38,7 +37,7 @@ export function Register() {
   }
 
   return (
-    <div className="h-screen w-screen flex items-center justify-center bg-gray-100">
+    <div className="h-screen w-screen flex items-center justify-center ">
       <Card className="w-[450px] space-y-2">
         <CardHeader className="flex flex-col items-center ">
           <img
@@ -119,6 +118,15 @@ export function Register() {
           >
             {isLoading ? "Loading..." : "Cadastrar"}
           </Button>
+          <div className="flex gap-1 justify-center text-sm">
+            <p>Já possui conta?</p>
+            <a 
+              href="/" 
+              className="text-purple-900 underline font-medium hover:text-purple-700 dark:text-purple-400"
+            >
+              Entrar
+            </a>
+          </div>
         </CardContent>
       </Card>
     </div>
