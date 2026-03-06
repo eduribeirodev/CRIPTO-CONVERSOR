@@ -17,7 +17,6 @@ const { theme, toggleTheme } = useTheme()
   return (
     <header className="h-16 border-b flex items-center justify-between px-6 bg-background">
 
-      {/* Menu */}
       <Sheet>
 
         <SheetTrigger asChild>
@@ -28,7 +27,6 @@ const { theme, toggleTheme } = useTheme()
 
         <SheetContent side="left" className="w-64 p-0">
 
-          {/* Sidebar dentro do drawer */}
           <Sidebar />
 
         </SheetContent>
