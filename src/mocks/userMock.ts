@@ -1,6 +1,6 @@
-import { type User } from "@/types/User";
+import type { UserRegister } from "@/types/User";
 
-export const userMock: User = {
+export const userMock: UserRegister = {
   name: "Admin",
   email: "admin@email.com",
   password: "123456",
