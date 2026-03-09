@@ -1,4 +1,4 @@
-// src/pages/Users.tsx
+
 import { useState, useEffect } from "react"
 import { userspageMock } from "@/mocks/userspageMock"
 import { SearchBar } from "@/components/searchBar"
@@ -18,9 +18,9 @@ export function Users() {
   const [filter, setFilter] = useState("all")
   const [currentPage, setCurrentPage] = useState(1)
 
-  const itemsPerPage = 5 // usuários por página
+  const itemsPerPage = 5 
 
-  // Filtra por busca e status
+
   const filteredUsers = userspageMock.filter((user) => {
     const matchSearch = user.name.toLowerCase().includes(search.toLowerCase())
     const matchFilter = filter === "all" || user.status === filter
@@ -29,7 +29,7 @@ export function Users() {
 
   const totalPages = Math.ceil(filteredUsers.length / itemsPerPage)
 
-  // Paginação
+ 
   const startIndex = (currentPage - 1) * itemsPerPage
   const paginatedUsers = filteredUsers.slice(startIndex, startIndex + itemsPerPage)
 
@@ -41,7 +41,6 @@ export function Users() {
     if (currentPage > 1) setCurrentPage(currentPage - 1)
   }
 
-  // Resetar página ao mudar search ou filter
   useEffect(() => {
     setCurrentPage(1)
   }, [search, filter])
@@ -52,7 +51,6 @@ export function Users() {
         Usuários
       </h1>
 
-      {/* Barra de pesquisa + filtro */}
       <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 w-full">
         <div className="flex-1 w-full">
           <SearchBar
@@ -65,7 +63,6 @@ export function Users() {
         <FilterButton onFilterChange={(status) => setFilter(status)} />
       </div>
 
-      {/* Tabela */}
       <div className="overflow-x-auto border rounded-lg mt-4">
         <Table className="min-w-full">
           <TableHeader>
@@ -104,7 +101,6 @@ export function Users() {
         </Table>
       </div>
 
-      {/* Paginação */}
       <div className="flex flex-col sm:flex-row justify-center items-center gap-2 mt-6 border-">
         <button
           className="px-3 py-1 border rounded-2xl disabled:opacity-50"
