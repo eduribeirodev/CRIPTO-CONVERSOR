@@ -32,18 +32,17 @@ Este projeto consiste num painel administrativo (backoffice) que permite gerir u
 
 A arquitetura segue padrões de escalabilidade e separação de conceitos:
 
-
-src/
-├── components/   # Componentes reutilizáveis (UI, Layout, Forms)
-├── context/      # Context API para gestão do Tema (Dark/Light)
-├── hooks/        # Hooks personalizados (Ex: useCrypto para fetch)
-├── layouts/      # DashboardLayout para persistência da navegação
-├── lib/          # Configurações de bibliotecas (utils, shadcn)
-├── mocks/        # Dados estáticos (Lista de 10+ users e 30+ transações)
-├── pages/        # Telas: Home, Users, Deposit, Sake e Conversion
-├── routes/       # Definição e proteção das rotas da aplicação
-└── services/     # Camada de serviços para chamadas à API
-
+text
+  src/
+  ├── components/   # Componentes de UI (Botões, Inputs, Cards)
+  ├── context/      # Estados globais (Ex: ThemeContext)
+  ├── hooks/        # Hooks personalizados (Ex: useCrypto)
+  ├── layouts/      # Estrutura base (DashboardLayout)
+  ├── lib/          # Utilitários e configurações (Shadcn/Tailwind)
+  ├── mocks/        # Dados obrigatórios (Users e Transactions)
+  ├── pages/        # Telas da aplicação (Home, Users, Withdraw, etc)
+  └── services/     # Camada de comunicação com a API
+  
 ## 🚀 Como Rodar o Projeto
 
 Siga os passos abaixo para executar a aplicação localmente:
