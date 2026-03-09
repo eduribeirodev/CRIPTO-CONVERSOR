@@ -32,7 +32,7 @@ Este projeto consiste num painel administrativo (backoffice) que permite gerir u
 
 A arquitetura segue padrões de escalabilidade e separação de conceitos:
 
-```text
+
 src/
 ├── components/   # Componentes reutilizáveis (UI, Layout, Forms)
 ├── context/      # Context API para gestão do Tema (Dark/Light)
@@ -43,3 +43,26 @@ src/
 ├── pages/        # Telas: Home, Users, Deposit, Sake e Conversion
 ├── routes/       # Definição e proteção das rotas da aplicação
 └── services/     # Camada de serviços para chamadas à API
+
+## 🚀 Como Rodar o Projeto
+
+Siga os passos abaixo para executar a aplicação localmente:
+
+### 1. Pré-requisitos
+Certifique-se de que tem o **Node.js** (v18+) instalado na sua máquina.
+
+### 2. Clonar o Repositório
+bash
+
+git clone [https://github.com/eduribeirodev/CRIPTO-CONVERSOR.git](https://github.com/eduribeirodev/CRIPTO-CONVERSOR.git)
+cd CRIPTO-CONVERSOR
+
+### 3. npm install 
+
+### 4. Variáveis de Ambiente
+
+Crie um arquivo .env na raiz do projeto e adicione a sua chave da CoinGecko (opcional):
+VITE_API_KEY=sua_chave_aqui
+
+### 5. Iniciar a Aplicação
+npm run dev
