@@ -1,73 +1,45 @@
-# React + TypeScript + Vite
+#  Cripto Conversor - Nexus Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007acc.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Sobre o Projeto
 
-## React Compiler
+Este projeto consiste num painel administrativo (backoffice) que permite gerir utilizadores e fluxos financeiros. A aplicação foca-se em **UI consistente**, **responsividade** e **boas práticas de desenvolvimento** com React.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Principais Objetivos Alcançados:
+- Integração com API externa para cotações reais.
+- Gestão de estado local e simulação de dados (Mocks).
+- Interface moderna com suporte a Dark/Light Mode.
+- Navegação fluida entre as 5 telas obrigatórias.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+##  Tecnologias e Stack Técnica
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Frontend:** [React.js](https://reactjs.org/) (v18) com [Vite](https://vitejs.dev/) para um ambiente de desenvolvimento ultra-rápido.
+- **Linguagem:** [TypeScript](https://www.typescriptlang.org/) para garantir tipagem estática e evitar erros em tempo de execução.
+- **Estilização:** [Tailwind CSS](https://tailwindcss.com/) para design responsivo e [Shadcn/UI](https://ui.shadcn.com/) para componentes de interface de alta qualidade.
+- **Ícones:** [Lucide React](https://lucide.dev/).
+- **API:** [CoinGecko API](https://www.coingecko.com/en/api) para dados reais de mercado.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+##  Estrutura de Pastas
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+A arquitetura segue padrões de escalabilidade e separação de conceitos:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```text
+src/
+├── components/   # Componentes reutilizáveis (UI, Layout, Forms)
+├── context/      # Context API para gestão do Tema (Dark/Light)
+├── hooks/        # Hooks personalizados (Ex: useCrypto para fetch)
+├── layouts/      # DashboardLayout para persistência da navegação
+├── lib/          # Configurações de bibliotecas (utils, shadcn)
+├── mocks/        # Dados estáticos (Lista de 10+ users e 30+ transações)
+├── pages/        # Telas: Home, Users, Deposit, Sake e Conversion
+├── routes/       # Definição e proteção das rotas da aplicação
+└── services/     # Camada de serviços para chamadas à API
