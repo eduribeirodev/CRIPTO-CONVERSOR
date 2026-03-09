@@ -10,11 +10,9 @@ import {
   SelectContent,
   SelectItem
 } from "@/components/ui/select"
-import { Textarea } from "@/components/ui/textarea"
 import { toast, Toaster } from "sonner"
 import { useState } from "react"
 
-type Balance = Record<string, number>
 
 
 
