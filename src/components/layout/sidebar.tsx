@@ -8,7 +8,6 @@ const menuItems = [
   { label: "Depósito", icon: Banknote, page: "/deposit" },
   { label: "Saque", icon: HandCoins, page: "/sake" },
   { label: "Conversão", icon: Repeat, page: "/conversion" },
-  { label: "Configurações", icon: Settings, page: "/config" },
 ]
 
 export function Sidebar() {
