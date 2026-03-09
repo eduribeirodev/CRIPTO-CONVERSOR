@@ -32,7 +32,7 @@ Este projeto consiste num painel administrativo (backoffice) que permite gerir u
 
 A arquitetura segue padrões de escalabilidade e separação de conceitos:
 
-text
+```
   src/
   ├── components/   # Componentes de UI (Botões, Inputs, Cards)
   ├── context/      # Estados globais (Ex: ThemeContext)
@@ -42,6 +42,7 @@ text
   ├── mocks/        # Dados obrigatórios (Users e Transactions)
   ├── pages/        # Telas da aplicação (Home, Users, Withdraw, etc)
   └── services/     # Camada de comunicação com a API
+```
   
 ## 🚀 Como Rodar o Projeto
 
