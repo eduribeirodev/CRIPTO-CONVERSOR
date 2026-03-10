@@ -66,3 +66,26 @@ VITE_API_KEY=sua_chave_aqui
 
 ### 5. Iniciar a Aplicação
 npm run dev
+
+### Credencias de Acesso com Dados Dockados
+### Página de Login
+
+```
+E-mail: admin@email.com
+
+Senha: 123456
+```
+
+### Página de Registro
+Para simular um cadastro com sucesso e ser redirecionado ao Dashboard, os campos devem ser preenchidos exatamente assim:
+
+```
+Nome: Admin
+
+Email: admin@email.com
+
+Senha: 123456
+
+Confirmação de Senha: 123456
+
+```
