@@ -1,73 +1,91 @@
-# React + TypeScript + Vite
+#  Cripto Conversor 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007acc.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Sobre o Projeto
 
-## React Compiler
+Este projeto consiste num painel administrativo (backoffice) que permite gerir utilizadores e fluxos financeiros. A aplicação foca-se em **UI consistente**, **responsividade** e **boas práticas de desenvolvimento** com React.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Principais Objetivos Alcançados:
+- Integração com API externa para cotações reais.
+- Gestão de estado local e simulação de dados (Mocks).
+- Interface moderna com suporte a Dark/Light Mode.
+- Navegação fluida entre as 5 telas obrigatórias.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+##  Tecnologias e Stack Técnica
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Frontend:** [React.js](https://reactjs.org/) (v18) com [Vite](https://vitejs.dev/) para um ambiente de desenvolvimento ultra-rápido.
+- **Linguagem:** [TypeScript](https://www.typescriptlang.org/) para garantir tipagem estática e evitar erros em tempo de execução.
+- **Estilização:** [Tailwind CSS](https://tailwindcss.com/) para design responsivo e [Shadcn/UI](https://ui.shadcn.com/) para componentes de interface de alta qualidade.
+- **Ícones:** [Lucide React](https://lucide.dev/).
+- **API:** [CoinGecko API](https://www.coingecko.com/en/api) para dados reais de mercado.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+##  Estrutura de Pastas
+
+A arquitetura segue padrões de escalabilidade e separação de conceitos:
+
+```
+  src/
+  ├── components/   # Componentes de UI (Botões, Inputs, Cards)
+  ├── context/      # Estados globais (Ex: ThemeContext)
+  ├── hooks/        # Hooks personalizados (Ex: useCrypto)
+  ├── layouts/      # Estrutura base (DashboardLayout)
+  ├── lib/          # Utilitários e configurações (Shadcn/Tailwind)
+  ├── mocks/        # Dados obrigatórios (Users e Transactions)
+  ├── pages/        # Telas da aplicação (Home, Users, Withdraw, etc)
+  └── services/     # Camada de comunicação com a API
+```
+  
+## 🚀 Como Rodar o Projeto
+
+Siga os passos abaixo para executar a aplicação localmente:
+
+### 1. Pré-requisitos
+Certifique-se de que tem o **Node.js** (v18+) instalado na sua máquina.
+
+### 2. Clonar o Repositório
+bash
+
+git clone [https://github.com/eduribeirodev/CRIPTO-CONVERSOR.git](https://github.com/eduribeirodev/CRIPTO-CONVERSOR.git)
+cd CRIPTO-CONVERSOR
+
+### 3. npm install 
+
+### 4. Variáveis de Ambiente
+
+Crie um arquivo .env na raiz do projeto e adicione a sua chave da CoinGecko (opcional):
+VITE_API_KEY=sua_chave_aqui
+
+### 5. Iniciar a Aplicação
+npm run dev
+
+### Credencias de Acesso com Dados Dockados
+### Página de Login
+
+```
+E-mail: admin@email.com
+
+Senha: 123456
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Página de Registro
+Para simular um cadastro com sucesso e ser redirecionado ao Dashboard, os campos devem ser preenchidos exatamente assim:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```
+Nome: Admin
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Email: admin@email.com
+
+Senha: 123456
+
+Confirmação de Senha: 123456
+
 ```
